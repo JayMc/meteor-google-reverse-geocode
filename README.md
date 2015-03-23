@@ -7,7 +7,30 @@ meteor add jaymc:google-reverse-geocode
 ```
 
 #Usage
-getLocation(lat, long); returns the whole response from Googles API
+
+*Convert lat and lng to address*
+Returns whole data from Google API. Check below for tidy outputs
+```
+reverseGeocode.getLocation(37.774690, -122.415463, function(location){
+
+	location is straight output from Google
+});
+```
+
+*Data is accessible from*
+```
+reverseGeocode.data
+```
+
+*Format address as an Object*
+```
+reverseGeocode.getAddrObj()
+```
+
+*Format address as a String*
+```
+reverseGeocode.getAddrStr()
+```
 
 #Example
 ```

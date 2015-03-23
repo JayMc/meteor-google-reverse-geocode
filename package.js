@@ -12,6 +12,7 @@ Package.onUse(function(api) {
     'http'
   ]);
   api.addFiles('google-reverse-geocode.js');
+  api.export('reverseGeocode', 'client')
 });
 
 Package.onTest(function(api) {
