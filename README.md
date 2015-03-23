@@ -11,9 +11,13 @@ meteor add jaymc:google-reverse-geocode
 *Convert lat and lng to address*
 Returns whole data from Google API. Check below for tidy outputs
 ```
-reverseGeocode.getLocation(37.774690, -122.415463, function(location){
+var lat = 37.774690;
+lar lng = -122.415463;
+reverseGeocode.getLocation(lat, lng, function(location){
 
-	location is straight output from Google
+	//location is straight output from Google
+	//or you can now access it from reverseGeocode object
+	Session.set('location', reverseGeocode.getAddrStr());
 });
 ```
 
@@ -32,8 +36,4 @@ reverseGeocode.getAddrObj()
 reverseGeocode.getAddrStr()
 ```
 
-#Example
-```
-var location = Meteor.call('getLocation', 37.774690, -122.415463);
-console.log(location.results[0].formatted_address)
-```
+
