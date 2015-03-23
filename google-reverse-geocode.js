@@ -15,6 +15,3 @@ Meteor.methods({
 	}
 })
 
-
-var location = Meteor.call('getLocation', 37.774690, -122.415463);
-console.log(location.results[0].formatted_address)
