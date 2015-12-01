@@ -1,6 +1,6 @@
 reverseGeocode = {
 	data: { },
-	getActualLocation: function (url) {
+	getActualLocation: function (url, callback) {
 		var self = this;
 		HTTP.call('GET', url, { timeout: 5000 }, function (err, result) {
 			if (err){
@@ -15,11 +15,11 @@ reverseGeocode = {
 	},
 	getSecureLocation: function (lat, lng, callback) {
 		var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng;
-		this.getActualLocation(url);
+		this.getActualLocation(url, callback);
 	},
 	getLocation: function(lat, lng, callback){
 		var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng;
-		this.getActualLocation(url);
+		this.getActualLocation(url, callback);
 	},
 	getAddrObj: function(){
 		return this.data.results[0].address_components.map(function(comp){

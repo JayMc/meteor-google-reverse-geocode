@@ -21,6 +21,18 @@ reverseGeocode.getLocation(lat, lng, function(location){
 });
 ```
 
+*Use this if you are using https
+```
+var lat = 37.774690;
+lar lng = -122.415463;
+reverseGeocode.getSecureLocation(lat, lng, function(location){
+
+  //location is straight output from Google
+  //or you can now access it from reverseGeocode object
+  Session.set('location', reverseGeocode.getAddrStr());
+});
+```
+
 *Data is accessible from*
 ```
 reverseGeocode.data
