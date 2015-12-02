@@ -1,24 +1,25 @@
 reverseGeocode = {
-	getLocation: function(lat, lng, callback){
+	data: { },
+	getActualLocation: function (url, callback) {
 		var self = this;
-		var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng;
-		HTTP.call('GET', url, {timeout: 5000}, function(err, result){
-
-			if(err){
+		HTTP.call('GET', url, { timeout: 5000 }, function (err, result) {
+			if (err){
 				callback(err);
 			}
 
-			if(result.statusCode === 200){
+			if (result.statusCode === 200) {
 				self.data = JSON.parse(result.content);
 				callback(self.data);
 			}
-
 		});
-		
-
 	},
-	data: {
-
+	getSecureLocation: function (lat, lng, callback) {
+		var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng;
+		this.getActualLocation(url, callback);
+	},
+	getLocation: function(lat, lng, callback){
+		var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng;
+		this.getActualLocation(url, callback);
 	},
 	getAddrObj: function(){
 		return this.data.results[0].address_components.map(function(comp){
@@ -33,5 +34,4 @@ reverseGeocode = {
 	getAddrStr: function(){
 		return this.data.results[0].formatted_address;
 	}
-
 };
