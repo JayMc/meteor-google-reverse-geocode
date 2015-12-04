@@ -1,6 +1,6 @@
 Package.describe({
   name: 'jaymc:google-reverse-geocode',
-  version: '0.0.3',
+  version: '0.0.4',
   summary: 'Calls Googles reverse geocode API converting GPS lat and lng to physical address',
   git: 'https://github.com/JayMc/meteor-google-reverse-geocode',
   documentation: 'README.md'
