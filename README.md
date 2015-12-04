@@ -1,12 +1,12 @@
-#GPS coords to address
+# GPS coords to address
 Calls [Googles reverse geocode API](https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding) converting GPS lat and lng to physical address
 
-#install
+# install
 ```
 meteor add jaymc:google-reverse-geocode
 ```
 
-#Usage
+# Usage
 
 *Convert lat and lng to address*
 Returns whole data from Google API. Check below for tidy outputs
@@ -21,7 +21,7 @@ reverseGeocode.getLocation(lat, lng, function(location){
 });
 ```
 
-*Use this if you are using https
+*Use this if you are using https*
 ```
 var lat = 37.774690;
 lar lng = -122.415463;
