@@ -48,4 +48,7 @@ reverseGeocode.getAddrObj()
 reverseGeocode.getAddrStr()
 ```
 
-
+*Get postal code*
+```
+reverseGeocode.getPostalCode()
+```
