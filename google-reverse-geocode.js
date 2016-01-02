@@ -38,7 +38,7 @@ reverseGeocode = {
         var postalCode;
         this.getAddrObj().forEach(function(comp) {
             if (comp.type === 'postal_code') {
-                postalCode = comp.long_name;
+                postalCode = comp.longName;
             }
         });
         return postalCode;
