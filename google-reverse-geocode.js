@@ -34,13 +34,46 @@ reverseGeocode = {
 	getAddrStr: function(){
 		return this.data.results[0].formatted_address;
 	},
-    getPostalCode: function() {
+	getStreetNumber: function() {
+        var streetNumber;
+        this.getAddrObj().forEach(function(comp) {
+            if (comp.type === 'street_number') streetNumber = comp.longName;
+        });
+        return streetNumber;
+    },
+    getStreet: function() {
+        var street;
+        this.getAddrObj().forEach(function(comp) {
+            if (comp.type === 'route') street = comp.longName;
+        });
+        return street;
+    },
+    getSuburb: function() {
+        var suburb;
+        this.getAddrObj().forEach(function(comp) {
+            if (comp.type === 'neighborhood') suburb = comp.longName;
+        });
+        return suburb;
+    },
+    getCity: function() {
+        var city;
+        this.getAddrObj().forEach(function(comp) {
+            if (comp.type === 'locality') city = comp.longName;
+        });
+        return city;
+    },
+	getPostalCode: function() {
         var postalCode;
         this.getAddrObj().forEach(function(comp) {
-            if (comp.type === 'postal_code') {
-                postalCode = comp.longName;
-            }
+            if (comp.type === 'postal_code') postalCode = comp.longName;
         });
         return postalCode;
+    },
+    getCountry: function() {
+        var country;
+        this.getAddrObj().forEach(function(comp) {
+            if (comp.type === 'country') country = comp.longName;
+        });
+        return country;
     }
 };
