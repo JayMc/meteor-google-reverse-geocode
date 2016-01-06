@@ -33,5 +33,14 @@ reverseGeocode = {
 	},
 	getAddrStr: function(){
 		return this.data.results[0].formatted_address;
-	}
+	},
+    getPostalCode: function() {
+        var postalCode;
+        this.getAddrObj().forEach(function(comp) {
+            if (comp.type === 'postal_code') {
+                postalCode = comp.longName;
+            }
+        });
+        return postalCode;
+    }
 };
