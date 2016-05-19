@@ -14,11 +14,11 @@ reverseGeocode = {
 		});
 	},
 	getSecureLocation: function (lat, lng, callback) {
-		var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng;
+		var url = '//maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng;
 		this.getActualLocation(url, callback);
 	},
 	getLocation: function(lat, lng, callback){
-		var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng;
+		var url = '//maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng;
 		this.getActualLocation(url, callback);
 	},
 	getAddrObj: function(){
